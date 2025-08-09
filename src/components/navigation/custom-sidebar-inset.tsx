@@ -23,7 +23,7 @@ export const CustomSidebarInset = ({children}: CustomSidebarInsetProps) => {
 					<UserButton/>
 				</div>
 			</header>
-			<main>
+			<main className='flex flex-col w-full h-full'>
 				{children}
 			</main>
 		</SidebarInset>

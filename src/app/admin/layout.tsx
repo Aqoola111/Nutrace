@@ -14,7 +14,9 @@ const DashboardLayout = ({children}: DashboardLayoutProps) => {
 		<SidebarProvider>
 			<AppSidebar sideBarItems={adminSideBarItems} title={'Admin Dashboard'}/>
 			<CustomSidebarInset>
-				{children}
+				<div className='flex-1'>
+					{children}
+				</div>
 			</CustomSidebarInset>
 		</SidebarProvider>
 	)

@@ -1,7 +1,5 @@
 import React from "react";
 import {SidebarProvider} from "@/components/ui/sidebar"
-import {AppSidebar} from "@/components/navigation/app-sidebar";
-import {adminSideBarItems} from "@/lib/constants";
 import {CustomSidebarInset} from "@/components/navigation/custom-sidebar-inset";
 
 interface DashboardLayoutProps {
@@ -11,7 +9,7 @@ interface DashboardLayoutProps {
 const DashboardLayout = ({children}: DashboardLayoutProps) => {
 	return (
 		<SidebarProvider>
-			<AppSidebar sideBarItems={adminSideBarItems} title={'Dashboard'}/>
+			{/*<AppSidebar sideBarItems={adminSideBarItems} title={'Dashboard'}/>*/}
 			<CustomSidebarInset>
 				{children}
 			</CustomSidebarInset>

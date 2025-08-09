@@ -15,17 +15,17 @@ export const adminSideBarItems: SideBarItem[] = [
 		children: [
 			{
 				label: "Foods",
-				href: "/admin/foods",
+				href: "/admin/foods-management/foods",
 				icon: Apple,
 			},
 			{
 				label: "Categories",
-				href: "/admin/categories",
+				href: "/admin/foods-management/categories",
 				icon: Tags,
 			},
 			{
 				label: "Serving Units",
-				href: "/admin/serving-units",
+				href: "/admin/foods-management/serving-units",
 				icon: Ruler,
 			},
 		],
