@@ -1,6 +1,7 @@
 'use server'
 import {executeAction} from "@/lib/execute-action";
 import prisma from "@/lib/lib";
+import {CreateCategorySchema} from "@/app/admin/foods-management/categories/_types/categorySchema";
 
 const deleteCategory = async (id: number) => {
 	await executeAction({
@@ -8,4 +9,26 @@ const deleteCategory = async (id: number) => {
 	})
 }
 
-export {deleteCategory};
+const createCategory = async (data: CreateCategorySchema) => {
+	await executeAction({
+		actionFn: () => prisma.category.create({
+			data: {
+				name: data.name,
+			}
+		})
+	})
+}
+
+const updateCategory = async (data: CreateCategorySchema) => {
+	if (data.action == 'update') {
+		await executeAction({
+			actionFn: () => prisma.category.update({
+				where: {id: data.id},
+				data: {
+					name: data.name
+				}
+			})
+		})
+	}
+}
+export {deleteCategory, createCategory, updateCategory};
