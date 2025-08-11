@@ -1,8 +1,8 @@
 "use server";
 
 import {ServingUnitSchema} from "@/app/admin/foods-management/serving-units/_types/schema";
+import prisma from "@/lib/db";
 import {executeAction} from "@/lib/execute-action";
-import prisma from "@/lib/lib";
 
 const createServingUnit = async (data: ServingUnitSchema) => {
 	await executeAction({

@@ -1,7 +1,7 @@
 'use server'
-import {executeAction} from "@/lib/execute-action";
-import prisma from "@/lib/lib";
 import {CreateCategorySchema} from "@/app/admin/foods-management/categories/_types/categorySchema";
+import prisma from "@/lib/db";
+import {executeAction} from "@/lib/execute-action";
 
 const deleteCategory = async (id: number) => {
 	await executeAction({
