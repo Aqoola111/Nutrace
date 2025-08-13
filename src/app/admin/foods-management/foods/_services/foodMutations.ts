@@ -39,6 +39,7 @@ const createFood = async (data: FoodSchema) => {
 };
 
 const updateFood = async (data: FoodSchema) => {
+	console.log("updateFood", data);
 	await executeAction({
 		actionFn: async () => {
 			const validatedData = foodSchema.parse(data);
@@ -66,7 +67,7 @@ const updateFood = async (data: FoodSchema) => {
 						await prisma.foodServingUnit.create({
 							data: {
 								foodId: toStringSafe(validatedData.id),
-								servingUnitId: unit.foodServingUnitId,
+								servingUnitId: toStringSafe(unit.foodServingUnitId),
 								grams: toNumberSafe(unit.grams),
 							},
 						});

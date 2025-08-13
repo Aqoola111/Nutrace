@@ -73,11 +73,13 @@ const FoodFormDialog = () => {
 	const onSubmit: SubmitHandler<FoodSchema> = (data) => {
 		if (data.action === 'create') {
 			createFoodMutation.mutate(data, {
-				onSuccess: handleSuccess
+				onSuccess: handleSuccess,
+				onError: (err) => toast.error(err.message),
 			})
 		} else {
 			updateFoodMutation.mutate(data, {
-				onSuccess: handleSuccess
+				onSuccess: handleSuccess,
+				onError: (err) => toast.error(err.message),
 			})
 		}
 	}
@@ -261,7 +263,7 @@ const FoodFormDialog = () => {
 							<Button
 								type='submit'
 								disabled={disableSubmit}
-								className='w-1/2'
+								className='w-1/2 disabled:opacity-50'
 							>
 								{selectedFoodId ? "Update Food" : "Create Food"}
 							</Button>

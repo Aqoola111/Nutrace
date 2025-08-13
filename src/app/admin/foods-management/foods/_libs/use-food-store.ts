@@ -2,7 +2,7 @@ import {foodFiltersDefaultValues, FoodFiltersSchema,} from "@/app/admin/foods-ma
 import {createStore} from "@/lib/createStore";
 
 type State = {
-	selectedFoodId: number | null;
+	selectedFoodId: string | null;
 	foodDialogOpen: boolean;
 	foodFilters: FoodFiltersSchema;
 	foodFiltersDrawerOpen: boolean;

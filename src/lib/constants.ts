@@ -49,3 +49,15 @@ export const patterns = {
 };
 
 
+export const sortByOptions = [
+	{label: "Name", value: "name"},
+	{label: "Calories", value: "calories"},
+	{label: "Carbohydrates", value: "carbohydrates"},
+	{label: "Fat", value: "fat"},
+	{label: "Protein", value: "protein"},
+] as const
+
+export const orderByOptions = [
+	{label: "Ascending", value: "asc"},
+	{label: "Descending", value: "desc"},
+]
